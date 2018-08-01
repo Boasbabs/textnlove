@@ -146,8 +146,14 @@ h1, h2, h3, h4 {
 .text-capcase {
   text-transform: uppercase; }
 
-br-0 {
-  border-radius: 0; }
+.scrollable {
+  overflow-y: auto; }
+
+.big-header {
+  letter-spacing: 2px; }
+
+.bold-text {
+  font-weight: bold; }
 
 .masthead__body {
   display: flex;
@@ -260,20 +266,11 @@ br-0 {
 
 .button {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  font-weight: 700;
+  font-weight: 400;
   padding-left: 1.2em;
   padding-right: 1.2em;
   position: relative;
   text-align: center; }
-  .button:after {
-    background: rgba(255, 255, 255, 0.35);
-    content: '';
-    height: 3px;
-    left: -50%;
-    position: absolute;
-    top: 50%;
-    width: 200%;
-    z-index: -1; }
   .button.play-button {
     background: #2ecc71;
     background: linear-gradient(to bottom, #2ecc71 50%, #16a085) no-repeat;
@@ -287,20 +284,20 @@ br-0 {
     height: 4.3em;
     letter-spacing: 1.2px;
     width: 40%; }
+    .button.play-button:after {
+      background: rgba(255, 255, 255, 0.35);
+      content: '';
+      height: 3px;
+      left: -50%;
+      position: absolute;
+      top: 50%;
+      width: 200%;
+      z-index: -1; }
 
 button:disabled.play-button, button[disabled].play-button {
   background: linear-gradient(to bottom, #16a085 10%, #16a085) no-repeat;
   background-clip: padding-box;
   cursor: auto; }
-
-.scrollable {
-  overflow-y: auto; }
-
-.big-header {
-  letter-spacing: 2px; }
-
-.bold-text {
-  font-weight: bold; }
 
 .massive-header {
   font-size: 3.5rem;
@@ -335,5 +332,126 @@ input[type="text"]:focus {
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #ffffff inset;
-  -webkit-text-fill-color: #16a085 !important;
+  -webkit-text-fill-color: #16a085;
   font-family: "Source Sans Pro", "Lato", Arial, serif; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  transition: background-color 0.25s ease;
+  z-index: 9999; }
+  .modal.open {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.25s; }
+    .modal.open > .content-wrapper {
+      transform: scale(1); }
+  .modal .content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+    margin: 0;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
+    transform: scale(0);
+    transition: transform 0.25s;
+    transition-delay: 0.15s; }
+    .modal .content-wrapper .close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: none;
+      background-color: transparent;
+      font-size: 1.5rem;
+      transition: 0.25s linear; }
+      .modal .content-wrapper .close:before, .modal .content-wrapper .close:after {
+        position: absolute;
+        content: '';
+        width: 1.25rem;
+        height: 0.125rem;
+        background-color: black; }
+      .modal .content-wrapper .close:before {
+        transform: rotate(-45deg); }
+      .modal .content-wrapper .close:after {
+        transform: rotate(45deg); }
+      .modal .content-wrapper .close:hover {
+        transform: rotate(360deg); }
+        .modal .content-wrapper .close:hover:before, .modal .content-wrapper .close:hover:after {
+          background-color: #2ecc71; }
+    .modal .content-wrapper .modal-header {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0;
+      padding: 0 0 1.25rem; }
+      .modal .content-wrapper .modal-header h2 {
+        font-size: 1.5rem; }
+    .modal .content-wrapper .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: flex-start; }
+      .modal .content-wrapper .content h4 {
+        display: block; }
+      .modal .content-wrapper .content p {
+        font-size: 0.875rem;
+        line-height: 1.75; }
+    .modal .content-wrapper .modal-footer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      margin: 0;
+      padding: 1.875rem 0 0; }
+      .modal .content-wrapper .modal-footer .action {
+        position: relative;
+        margin-left: 0.625rem;
+        padding: 0.825rem 1.825rem;
+        border: none;
+        border-radius: 4.5px;
+        background-color: #2ecc71;
+        color: white;
+        font-size: 1rem;
+        font-weight: 300;
+        overflow: hidden;
+        z-index: 1; }
+        .modal .content-wrapper .modal-footer .action:before {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          width: 0%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.12);
+          transition: width 0.25s;
+          z-index: 0; }
+        .modal .content-wrapper .modal-footer .action:first-child {
+          background-color: #2ecc71; }
+        .modal .content-wrapper .modal-footer .action:last-child {
+          background-color: #FF2600; }
+        .modal .content-wrapper .modal-footer .action:hover:before {
+          width: 100%; }
