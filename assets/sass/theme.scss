@@ -1,7 +1,11 @@
-/*-------------------
-    Brand Colors
---------------------*/
+
+/*---------- Fonts ---------------*/
+
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600');
+$font-primary: 'Source Sans Pro','Lato', Arial, serif;
+$font-secondary: 'Lato', Arial, sans-serif;
+
+/*----------- Brand Colors --------------*/
 
 $primaryColor        : #2ecc71;
 $secondaryColor      : #16a085;
@@ -11,5 +15,6 @@ $darkColor          : #2c3e50;
 $offWhiteColor       : #f2f2f2;
 $redColor            : #FF2600;
 
-$font-primary: 'Source Sans Pro','Lato', Arial, serif;
-$font-secondary: 'Lato', Arial, sans-serif;
+/*------- Animation ----------- */
+
+$base-duration: 0.25s;

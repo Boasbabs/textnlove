@@ -1,0 +1,129 @@
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+  //----------------- Masthead Side Menu, Body & Nav Styling ---------------------
+  .masthead__body {
+    display: flex;
+
+    .masthead__nav {
+      flex: 30%;
+
+      .masthead__nav-logo {
+        padding: 0.5rem 0;
+        height: 1.5em;
+        padding: 1rem 0;
+
+        h2 {
+          font-weight: bold;
+          letter-spacing: 0px;
+          font-size: 1em;
+          line-height: 1.4;
+        }
+      }
+
+      a {
+        padding: 2em 0.5em;
+        border-bottom: 1px $offWhiteColor solid;
+        text-decoration: none;
+        line-height: 1;
+        font-size: 14px;
+
+        img {
+          height: 25px;
+          margin-bottom: 0.35rem;
+        }
+      }
+
+    }
+
+    //Main content
+    #masthead__main {
+      flex: 70%;
+
+      .background-image {
+        background-size: auto auto;
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+        left: 30%;
+      }
+
+      .masthead__main--content {
+        .nav-item {
+          font-size: .85em;
+        }
+        .nav-item:last-child {
+          margin-right: 0.5em;
+        }
+
+      }
+
+    }
+  }
+
+
+  /* ---------- Header ----- */
+  .big-header {
+    letter-spacing: 0px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 0.23em 1.5em;
+    text-align: center;
+  }
+
+  .massive-header {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    border-top: 1px solid rgba(255,255,255,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.35);
+
+  }
+
+  // Phone Number Input styling ---------------------------
+
+  input[type=text], input[type=password], input[type='tel'] {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    &::-webkit-input-placeholder {
+      font-size: 14px;
+    }
+  }
+
+  .button {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+
+    &.play-button {
+      border: 5px solid rgba(255,255,255,0.3);
+      font-size: 14px;
+      height: 3em;
+      letter-spacing: 1px;
+      width: 85%;
+      margin-top: 1.7rem;
+
+      &:after {
+        display: none;
+      }
+    }
+
+  }
+
+
+  .modal .content-wrapper {
+    width: 68%;
+    padding: 1.35rem;
+  }
+
+  .modal .content-wrapper .modal-footer .action {
+    padding: 0.725rem;
+  }
+
+}
+
+

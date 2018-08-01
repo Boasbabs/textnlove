@@ -1,7 +1,7 @@
-/*-------------------
-    Brand Colors
---------------------*/
+/*---------- Fonts ---------------*/
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600");
+/*----------- Brand Colors --------------*/
+/*------- Animation ----------- */
 * {
   padding: 0;
   margin: 0;
@@ -190,7 +190,7 @@ h1, h2, h3, h4 {
     .masthead__body .masthead__nav a {
       background-color: #ffffff;
       height: 2em;
-      padding: 2em 2em;
+      padding: 2em 1em;
       border-bottom: 1px #f2f2f2 solid;
       text-decoration: none;
       line-height: 1;
@@ -205,11 +205,6 @@ h1, h2, h3, h4 {
       box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
       background-color: #2ecc71;
       color: #ffffff; }
-    .masthead__body .masthead__nav .fa {
-      display: block;
-      margin: 0.3em auto;
-      font-size: 1.6em;
-      color: #16a085; }
   .masthead__body #masthead__main {
     flex: 85%;
     height: 100vh;
@@ -220,7 +215,7 @@ h1, h2, h3, h4 {
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      filter: blur(5px);
+      filter: blur(2 px);
       -webkit-filter: blur(2px);
       z-index: 1;
       height: 800px;
@@ -325,11 +320,6 @@ input[type=text], input[type=password], input[type='tel'] {
     letter-spacing: 1px;
     font-weight: lighter; }
 
-input[type="text"]:focus {
-  padding-left: 1.6em;
-  transition: all 0.3s ease-out;
-  transition-delay: 0.2s; }
-
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #ffffff inset;
   -webkit-text-fill-color: #16a085;
@@ -360,7 +350,7 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 50%;
+    width: 40%;
     margin: 0;
     padding: 2.5rem;
     background-color: white;
@@ -387,7 +377,7 @@ input:-webkit-autofill {
         content: '';
         width: 1.25rem;
         height: 0.125rem;
-        background-color: black; }
+        background-color: #2c3e50; }
       .modal .content-wrapper .close:before {
         transform: rotate(-45deg); }
       .modal .content-wrapper .close:after {
@@ -455,3 +445,79 @@ input:-webkit-autofill {
           background-color: #FF2600; }
         .modal .content-wrapper .modal-footer .action:hover:before {
           width: 100%; }
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .masthead__body {
+    display: flex; }
+    .masthead__body .masthead__nav {
+      flex: 30%; }
+      .masthead__body .masthead__nav .masthead__nav-logo {
+        padding: 0.5rem 0;
+        height: 1.5em;
+        padding: 1rem 0; }
+        .masthead__body .masthead__nav .masthead__nav-logo h2 {
+          font-weight: bold;
+          letter-spacing: 0px;
+          font-size: 1em;
+          line-height: 1.4; }
+      .masthead__body .masthead__nav a {
+        padding: 2em 0.5em;
+        border-bottom: 1px #f2f2f2 solid;
+        text-decoration: none;
+        line-height: 1;
+        font-size: 14px; }
+        .masthead__body .masthead__nav a img {
+          height: 25px;
+          margin-bottom: 0.35rem; }
+    .masthead__body #masthead__main {
+      flex: 70%; }
+      .masthead__body #masthead__main .background-image {
+        background-size: auto auto;
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+        left: 30%; }
+      .masthead__body #masthead__main .masthead__main--content .nav-item {
+        font-size: .85em; }
+      .masthead__body #masthead__main .masthead__main--content .nav-item:last-child {
+        margin-right: 0.5em; }
+  /* ---------- Header ----- */
+  .big-header {
+    letter-spacing: 0px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 0.23em 1.5em;
+    text-align: center; }
+  .massive-header {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
+  input[type=text], input[type=password], input[type='tel'] {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    font-size: 14px;
+    letter-spacing: 1px; }
+    input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type='tel']::-webkit-input-placeholder {
+      font-size: 14px; }
+  .button {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+    padding-left: 0.2em;
+    padding-right: 0.2em; }
+    .button.play-button {
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      font-size: 14px;
+      height: 3em;
+      letter-spacing: 1px;
+      width: 85%;
+      margin-top: 1.7rem; }
+      .button.play-button:after {
+        display: none; }
+  .modal .content-wrapper {
+    width: 68%;
+    padding: 1.35rem; }
+  .modal .content-wrapper .modal-footer .action {
+    padding: 0.725rem; } }

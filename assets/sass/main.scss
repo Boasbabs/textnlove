@@ -41,7 +41,7 @@
     a {
       background-color: $whiteColor;
       height: 2em;
-      padding: 2em 2em;
+      padding: 2em 1em;
       border-bottom: 1px $offWhiteColor solid;
       text-decoration: none;
       line-height: 1;
@@ -57,12 +57,6 @@
       box-shadow: inset 0 0 8px  rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.1);
       background-color: $primaryColor;
       color: $whiteColor;
-    }
-    .fa {
-      display: block;
-      margin: 0.3em auto;
-      font-size: 1.6em;
-      color: $secondaryColor;
     }
 
   }
@@ -80,7 +74,8 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      filter: blur(5px);
+      filter: blur(2
+      px);
       -webkit-filter: blur(2px);
       z-index: 1;
       height: 800px;
@@ -132,7 +127,6 @@
 
 
 //----------------- Phone Number Form Styling ---------------------
-
 
 #phoneNumberForm {
   align-items: center;
@@ -193,8 +187,6 @@ button:disabled, button[disabled]{
   }
 }
 
-
-
 .massive-header {
   font-size: 3.5rem;
   font-weight: 400;
@@ -221,17 +213,11 @@ input[type=text], input[type=password], input[type='tel'] {
   margin-bottom: 30px;
 
   &::-webkit-input-placeholder {
-
     color: $tertiaryColor;
     font-size: 16px;
     letter-spacing: 1px;
     font-weight: lighter;
   }
-}
-input[type="text"]:focus{
-  padding-left: 1.6em;
-  transition: all 0.3s ease-out;
-  transition-delay: 0.2s;
 }
 
 input:-webkit-autofill {
@@ -243,7 +229,6 @@ input:-webkit-autofill {
 
 //----------------- Confirmation Modal Styling ---------------------
 
-$base-duration: 0.25s;
 
 .modal {
   position: fixed;
@@ -274,9 +259,8 @@ $base-duration: 0.25s;
     position: relative;
     display: flex;
     flex-direction: column;
-    //align-items: center;
     justify-content: flex-start;
-    width: 50%;
+    width: 40%;
     margin: 0;
     padding: 2.5rem;
     background-color: white;
@@ -305,7 +289,7 @@ $base-duration: 0.25s;
         content: '';
         width: 1.25rem;
         height: 0.125rem;
-        background-color: black;
+        background-color: $darkColor;
       }
 
       &:before {
