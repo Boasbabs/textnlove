@@ -18,11 +18,18 @@
             <h2>Text & Win </h2>
         </div>
 
-        <a class="item" href="#">Past Winners</a>
-        <a class="item" href="#">Countdown to <br>Next Draw</a>
-        <a class="item" href="#">Share with Friends</a>
-        <!--<a class="item" href="#">Link 4</a>-->
-        <!--<a class="item" href="#">Link 5</a>-->
+        <a class="item" href="#">
+            <img src="assets/img/trophy.svg">
+            Past Winners
+        </a>
+        <a class="item" href="#">
+            <img src="assets/img/hourglass.svg">
+            Countdown to <br>Next Draw
+        </a>
+        <a class="item" href="#">
+            <img src="assets/img/share.svg">
+            Share with Friends
+        </a>
 
     </div>
 
@@ -38,13 +45,21 @@
 
                 <h3 class="big-header white-color mt-1 bold-text text-capcase"> Welcome to Biggest Raffle Draw Online </h3>
 
+                <h1 class="massive-header white-color mt-1 mb-2 text-capcase">Text &amp; Win</h1>
 
-                <h1 class="massive-header white-color mt-1 mb-2 text-capcase">Play to win</h1>
+                <form id="phoneNumberForm" class="mt-2" action="">
+                    <input  id="phoneField" type='tel'
+                            placeholder="Enter Phone Number"
+                            size="15" minlength="10" maxlength="12"
+                            value="" name="number" pattern='^\+?\d{0,11}' required>
+                    <span class="validity"></span>
 
-                <input class="mt-2" type="text" placeholder="Enter Phone Number" value="" name="number">
-
-
-                <button class="button text-capcase play-button mt-2">Play to win</button>
+                    <button id="playButton"
+                            class="button text-capcase play-button mt-1"
+                            type="button" disabled>
+                        Play to win
+                    </button>
+                </form>
 
             </div>
 
@@ -52,7 +67,25 @@
     </div>
 
 </div>
+<script>
+    const phoneNumberForm = document.getElementById('phoneNumberForm');
+    const phoneField = document.getElementById('phoneField');
+    const playButton = document.getElementById('playButton');
 
+    phoneField.addEventListener('keyup', function (ev) {
+        isValidPhone = phoneField.checkValidity();
+
+        if(isValidPhone) {
+            playButton.disabled = false;
+        } else {
+            playButton.disabled = true;
+        }
+    });
+
+    playButton.addEventListener('click', function (ev) {
+        phoneNumberForm.submit()
+    });
+</script>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/semantic.min.js"></script>

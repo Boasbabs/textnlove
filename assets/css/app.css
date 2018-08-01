@@ -161,7 +161,8 @@ br-0 {
     padding: 0; }
     .masthead__body .masthead__nav .masthead__nav-logo {
       padding: 1rem 0;
-      background-color: #16a085;
+      background-color: #2ecc71;
+      background: linear-gradient(to bottom, #2ecc71 30%, #16a085) no-repeat;
       color: #ffffff;
       text-align: center;
       text-overflow: ellipsis;
@@ -173,26 +174,36 @@ br-0 {
       display: flex;
       -ms-flex-negative: 0;
       flex-shrink: 0;
-      font-weight: lighter;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       height: 1.5em;
       justify-content: center;
       padding: 1rem 0; }
+      .masthead__body .masthead__nav .masthead__nav-logo h2 {
+        font-weight: bold; }
     .masthead__body .masthead__nav a {
       background-color: #ffffff;
       height: 2em;
-      padding: 2em 1em;
+      padding: 2em 2em;
       border-bottom: 1px #f2f2f2 solid;
       text-decoration: none;
-      font-weight: bold;
+      line-height: 1;
+      text-align: center;
+      font-weight: 400;
       color: #95a5a6;
-      display: block; }
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column; }
     .masthead__body .masthead__nav a:hover {
       box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
       background-color: #2ecc71;
-      /* Dark grey background on mouse-over */
       color: #ffffff; }
+    .masthead__body .masthead__nav .fa {
+      display: block;
+      margin: 0.3em auto;
+      font-size: 1.6em;
+      color: #16a085; }
   .masthead__body #masthead__main {
     flex: 85%;
     height: 100vh;
@@ -230,7 +241,7 @@ br-0 {
         color: #ffffff;
         width: 4em; }
       .masthead__body #masthead__main .masthead__main--content .nav-item:last-child {
-        border-left: 2px #ffffff solid;
+        border-left: 1.3px #ffffff solid;
         padding-left: 5px;
         margin-right: 1.5em; }
       .masthead__body #masthead__main .masthead__main--content .masthead__main--body {
@@ -239,35 +250,48 @@ br-0 {
         justify-content: center;
         align-items: center; }
 
+#phoneNumberForm {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; }
+
 .button {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   font-weight: 700;
   padding-left: 1.2em;
   padding-right: 1.2em;
-  text-align: center;
-  position: relative; }
+  position: relative;
+  text-align: center; }
   .button:after {
-    position: absolute;
-    content: '';
-    width: 200%;
-    left: -50%;
-    top: 50%;
     background: rgba(255, 255, 255, 0.35);
+    content: '';
     height: 3px;
+    left: -50%;
+    position: absolute;
+    top: 50%;
+    width: 200%;
     z-index: -1; }
   .button.play-button {
     background: #2ecc71;
     background: linear-gradient(to bottom, #2ecc71 50%, #16a085) no-repeat;
+    background-clip: padding-box;
+    border-radius: 5em;
+    border: 12px solid rgba(255, 255, 255, 0.3);
     color: #fff;
-    height: 4.3em;
-    width: 40%;
+    cursor: pointer;
     font-size: large;
     font-weight: lighter;
+    height: 4.3em;
     letter-spacing: 1.2px;
-    border-radius: 5em;
-    background-clip: padding-box;
-    border: 12px solid rgba(255, 255, 255, 0.3); }
+    width: 40%; }
+
+button:disabled.play-button, button[disabled].play-button {
+  background: linear-gradient(to bottom, #16a085 10%, #16a085) no-repeat;
+  background-clip: padding-box;
+  cursor: auto; }
 
 .scrollable {
   overflow-y: auto; }
@@ -285,7 +309,7 @@ br-0 {
   border-top: 2px solid rgba(255, 255, 255, 0.35);
   border-bottom: 2px solid rgba(255, 255, 255, 0.35); }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type='tel'] {
   width: 50%;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -298,7 +322,7 @@ input[type=text], input[type=password] {
   letter-spacing: 2px;
   margin-right: 20px;
   margin-bottom: 30px; }
-  input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder {
+  input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type='tel']::-webkit-input-placeholder {
     color: #95a5a6;
     font-size: 16px;
     letter-spacing: 1px;
