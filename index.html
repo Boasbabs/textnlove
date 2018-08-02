@@ -5,14 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!--<link rel="stylesheet" href="assets/css/semantic.min.css">-->
-    <link rel="stylesheet" href="dist/assets/app.css">
+    <link rel="stylesheet" href="build/app.css">
 
     <title>Text & Win</title>
 </head>
 <body class="">
 <div class="masthead__body">
+    <!-- secondary Navigation-->
     <div class="masthead__nav scrollable">
         <div class="masthead__nav-logo">
             <h2>Text & Win </h2>
@@ -33,9 +32,11 @@
 
     </div>
 
+    <!-- Main Content -->
     <div id="masthead__main">
         <div class="background-image"></div>
         <div class="masthead__main--content scrollable">
+            <!-- secondary Navigation-->
             <div class="secondary-menu">
                 <a href="#" class="nav-item">Settings</a>
                 <a href="#" class="nav-item">Sign Out</a>
@@ -46,7 +47,7 @@
                 <h3 class="big-header white-color mt-1 bold-text text-capcase"> Welcome to Biggest Raffle Draw Online </h3>
 
                 <h1 class="massive-header white-color mt-1 mb-2 text-capcase">Text &amp; Win</h1>
-                <!--DO NOT DELETE-->
+                <!--Phone Number Form-->
 
                 <form id="phoneNumberForm" class="mt-2" action="">
                     <input  id="phoneField" type='tel'
@@ -88,53 +89,7 @@
     </div>
 
 </div>
-<script type="text/javascript">
+<script type="text/javascript" src="assets/js/landingPageForm.js"></script>
 
-    /*-------------- Scripts to disable playButton in order to valid input --------------*/
-
-    const phoneNumberForm = document.getElementById('phoneNumberForm');
-    const phoneField = document.getElementById('phoneField');
-    const playButton = document.getElementById('playButton');
-
-    phoneField.addEventListener('keyup', function (ev) {
-        isValidPhone = phoneField.checkValidity();
-
-        if(isValidPhone) {
-            playButton.disabled = false;
-        } else {
-            playButton.disabled = true;
-        }
-    });
-
-
-    /*-------------- Scripts for modal --------------*/
-
-    // Select all buttons with property 'data-modal'
-
-    // function that triggers modal on Play Button
-    function modalEvent(button) {
-            const trigger = button.getAttribute('data-modal-trigger');
-            const modal = document.querySelector('[data-modal=' + trigger + ']');
-            const contentWrapper = modal.querySelector('.content-wrapper');
-            const close = modal.querySelector('.close');
-
-            close.addEventListener('click', function(){ return modal.classList.remove('open')});
-            modal.addEventListener('click', function(){ return modal.classList.remove('open')});
-            contentWrapper.addEventListener('click', function(e){ return e.stopPropagation()});
-
-            modal.classList.toggle('open');
-    }
-
-    // the play button triggers modal upon click to confirm payment
-    playButton.addEventListener('click', function(ev) {
-        modalEvent(playButton);
-        // phoneNumberForm.submit()
-    });
-
-</script>
-
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/semantic.min.js"></script>
 </body>
 </html>

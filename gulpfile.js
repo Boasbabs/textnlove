@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const uglifycss = require('gulp-uglifycss');
 const livereload = require('gulp-livereload');
 const htmlmin = require('gulp-htmlmin');
+const surge = require('gulp-surge')
 
 
 // Task to minify HTML
@@ -10,7 +11,7 @@ const htmlmin = require('gulp-htmlmin');
 gulp.task('html', function() {
     return gulp.src('./*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
-        // .pipe(gulp.dest('dist'))
+        // .pipe(gulp.dest('./'))
         .pipe(livereload());
 });
 
@@ -21,7 +22,7 @@ gulp.task('css', function () {
         .pipe(uglifycss({
             "uglyComments": true
         }))
-        .pipe(gulp.dest('dist/assets'))
+        .pipe(gulp.dest('build'))
         .pipe(livereload());
 });
 
@@ -33,6 +34,13 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./assets/css/'));
 });
 
+// Task to deploy to Surge
+gulp.task('deploy', [], function () {
+    return surge({
+        project: './',         // Path to your static build directory
+        domain: 'textnwin-demo.surge.sh'  // Your domain or Surge subdomain
+    })
+})
 
 gulp.task('run', ['sass', 'css', 'html']);
 

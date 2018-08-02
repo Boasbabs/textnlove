@@ -211,7 +211,7 @@ h1, h2, h3, h4 {
     position: relative; }
     .masthead__body #masthead__main .background-image {
       background-color: linear-gradient(135deg, #16a085 0%, #2ecc71 100%);
-      background-image: url("../../assets/img/bg5.jpg");
+      background-image: url("../assets/img/bg5.jpg");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
