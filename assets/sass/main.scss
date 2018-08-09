@@ -74,11 +74,11 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      filter: blur(2
-      px);
+      filter: blur(2px);
       -webkit-filter: blur(2px);
       z-index: 1;
       height: 800px;
+      min-height: 100%;
       left: 15%;
       position: fixed;
       right: 0;

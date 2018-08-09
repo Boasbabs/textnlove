@@ -41,10 +41,11 @@
       flex: 70%;
 
       .background-image {
-        background-size: auto auto;
+        background-image: url("../assets/img/bg5.mini.jpg");
         filter: blur(1px);
         -webkit-filter: blur(1px);
         left: 30%;
+        min-height: 100%;
       }
 
       .masthead__main--content {

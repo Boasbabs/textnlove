@@ -215,10 +215,11 @@ h1, h2, h3, h4 {
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      filter: blur(2 px);
+      filter: blur(2px);
       -webkit-filter: blur(2px);
       z-index: 1;
       height: 800px;
+      min-height: 100%;
       left: 15%;
       position: fixed;
       right: 0; }
@@ -473,10 +474,11 @@ input:-webkit-autofill {
     .masthead__body #masthead__main {
       flex: 70%; }
       .masthead__body #masthead__main .background-image {
-        background-size: auto auto;
+        background-image: url("../assets/img/bg5.mini.jpg");
         filter: blur(1px);
         -webkit-filter: blur(1px);
-        left: 30%; }
+        left: 30%;
+        min-height: 100%; }
       .masthead__body #masthead__main .masthead__main--content .nav-item {
         font-size: .85em; }
       .masthead__body #masthead__main .masthead__main--content .nav-item:last-child {
