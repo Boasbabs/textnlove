@@ -38,7 +38,7 @@ gulp.task('sass', function () {
 gulp.task('deploy', [], function () {
     return surge({
         project: './',         // Path to your static build directory
-        domain: 'textnwin-demo.surge.sh'  // Your domain or Surge subdomain
+        domain: 'textnlove-demo.surge.sh'  // Your domain or Surge subdomain
     })
 })
 

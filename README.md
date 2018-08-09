@@ -1,4 +1,12 @@
-## Text &amp; Win Project
+## Text and Win Mockup UI
+
+This mockup was inspired by this image.
+
+##### Desktop View
+![alternativetext](assets/img/screenshot1.png)
+
+##### Mobile View
+![alternativetext](assets/img/screenshot2.png)
 
 #### Technology Used
 
