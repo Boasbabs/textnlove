@@ -24,6 +24,6 @@ II. [SASS](https://sass-lang.com/)
 
 III. Static site deployed on [Surge](https:surge.sh)
 
-View site at [Text and Win](http://textnwin-demo.surge.sh/)
+View site at [Text and Love](http://textnlove-demo.surge.sh/)
 
 
